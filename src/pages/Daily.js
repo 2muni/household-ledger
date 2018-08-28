@@ -1,32 +1,13 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
-import { Header, DateHeader, } from 'components';
-import { Breakdown, Main, } from 'components/Daily';
+import DailyContainer from 'containers/DailyContainer'
 
-const Wrapper = styled.div`
-  height: 100vh;
-  background-color: #fafafa;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Section = styled.section`
-  width: 940px;
-  display: flex;
-  justify-content: center;
-`;
-
-const Daily = () => (
-  <Wrapper>
-    <Header />
-    <DateHeader />
-    <Section>
-      <Breakdown />
-      <Main />
-    </Section>
-  </Wrapper>
-);
+class Daily extends React.Component {
+  render() {
+    return(
+      <DailyContainer/>
+    );
+  }
+}
 
 export default Daily;

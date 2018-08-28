@@ -1,1 +1,2 @@
-export { default as configure } from './configure';
+import configure from './configure';
+export default configure();

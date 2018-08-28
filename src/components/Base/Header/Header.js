@@ -17,10 +17,32 @@ const Frame = styled.div`
   align-items: center;
 `;
 
+const Logo = styled.div`
+  font-size: 1.5rem;
+`;
+
+const Nav = styled.nav`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const NavItem = styled.nav`
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+`
+
 const Header = () => (
   <Wrapper>
     <Frame>
-      haeder
+      <Logo>haeder</Logo>
+      <Nav>
+        <NavItem>일간</NavItem>
+        <NavItem>월간</NavItem>
+        <NavItem>분석</NavItem>
+      </Nav>
     </Frame>
   </Wrapper>
 );

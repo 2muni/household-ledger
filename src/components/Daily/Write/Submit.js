@@ -15,8 +15,8 @@ const Wrapper = styled.div`
   font-weight: bold;
 `;
 
-const Submit = ({ label }) => (
-  <Wrapper>
+const Submit = ({ label, onClick }) => (
+  <Wrapper onClick={onClick}>
     {label}
   </Wrapper>
 );

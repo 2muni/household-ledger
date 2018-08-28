@@ -17,7 +17,7 @@ const Label = styled.span`
 `;
 
 const Tag = styled.span`
-  font-size: .9rem
+  font-size: .9rem;
   color: #007acc;
 `;
 

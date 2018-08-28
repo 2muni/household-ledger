@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Button from './Button';
-import AmountField from './AmountField';
+import Input from './Input';
 import Unit from './Unit';
 import Submit from './Submit';
 import TagItem from './TagItem';
@@ -20,16 +20,24 @@ const Article = styled.article`
   flex: column;
 `;
 
-const AccountInput = () => (
+const AccountInput = ({ amount, onChange, onInsert }) => (
   <Wrapper>
     <Article>
-      <AmountField />
+      <Input 
+        type="number"
+        value={amount}
+        onChange={onChange}
+        placeholder="금액 입력"
+      />
       <Unit currency="￦" />
     </Article>
     <Article>
       <Button label="태그" />
       <Button label="메모" />
-      <Submit label="작성" />
+      <Submit
+        label="작성"
+        onClick={onInsert}
+      />
     </Article>
     <Article>
     <TagWrapper>
