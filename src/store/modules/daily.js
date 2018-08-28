@@ -7,21 +7,25 @@ const TOGGLE = 'daily/TOGGLE';
 const REMOVE = 'daily/REMOVE';
 
 export const changeInput = createAction(CHANGE_INPUT, value => value);
-export const insert = createAction(INSERT, text => text);
+export const insert = createAction(INSERT, amount => amount);
 export const toggle = createAction(TOGGLE, id => id);
 export const remove = createAction(REMOVE, id => id);
 
 let id = 0;
 
 const initialState = Map({
-  amount: '',
+  input: Map({
+    tag: '',
+    memo: '',
+    amount: ''
+  }),
   details: List()
 });
 
 export default handleActions({
-  [CHANGE_INPUT]: (state, action) => state.set('amount', action.payload),
-  [INSERT]: (state, { payload: amount }) => {
-    const item = Map({ id: id++, checked: false, amount });
+  [CHANGE_INPUT]: (state, action) => state.setIn(['input', 'amount'], action.payload),
+  [INSERT]: (state, { payload: input }) => {
+    const item = Map({ id: id++, checked: false, input });
     return state.update('details', details => details.push(item));
   },
   [TOGGLE]: (state, { payload: id }) => {

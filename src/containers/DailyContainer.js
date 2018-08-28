@@ -28,8 +28,8 @@ class DailyContainer extends React.Component {
   }
 
   handleInsert = () => {
-    const { amount, DailyActions } = this.props;
-    DailyActions.insert(amount);
+    const { input, DailyActions } = this.props;
+    DailyActions.insert(input);
     DailyActions.changeInput('');
   }
 
@@ -66,7 +66,7 @@ class DailyContainer extends React.Component {
 
 export default connect(
   ({ daily }) => ({
-      amount: daily.get('amount'),
+      input: daily.get('input'),
       details: daily.get('details'),
   }),
   (dispatch) => ({
