@@ -20,8 +20,8 @@ const initialState = Map({
 
 export default handleActions({
   [CHANGE_INPUT]: (state, action) => state.set('amount', action.payload),
-  [INSERT]: (state, { payload: text }) => {
-    const item = Map({ id: id++, checked: false, text });
+  [INSERT]: (state, { payload: amount }) => {
+    const item = Map({ id: id++, checked: false, amount });
     return state.update('details', details => details.push(item));
   },
   [TOGGLE]: (state, { payload: id }) => {

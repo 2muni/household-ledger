@@ -56,7 +56,7 @@ class DailyContainer extends React.Component {
           <Write
             amount={amount}
             onChange={handleChange}
-            onInput={handleInsert}
+            onInsert={handleInsert}
           />
         </Section>
       </Wrapper>
