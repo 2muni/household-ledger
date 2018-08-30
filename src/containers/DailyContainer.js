@@ -24,13 +24,14 @@ class DailyContainer extends React.Component {
 
   handleChange = (e) => {
     const { DailyActions } = this.props;
-    DailyActions.changeInput(e.target.value);
+    const { name, value } = e.target
+    DailyActions.changeInput({name, value});
   }
 
   handleInsert = () => {
-    const { input, DailyActions } = this.props;
-    DailyActions.insert(input);
-    DailyActions.changeInput('');
+    const { DailyActions } = this.props;
+    DailyActions.insert();
+    DailyActions.changeInput('amount', '');
   }
 
   handleToggle = (id) => {
@@ -46,13 +47,16 @@ class DailyContainer extends React.Component {
   render() {
     
     const { handleChange, handleInsert, handleToggle, handleRemove } = this;
-    const { amount, details } = this.props;
+    const { amount, tag, memo } = this.props.input;
+    const { details } = this.props;
 
     return (
       <Wrapper>
         <DateHeader />
         <Section>
-          <Breakdown />
+          <Breakdown
+            details={details}
+          />
           <Write
             amount={amount}
             onChange={handleChange}

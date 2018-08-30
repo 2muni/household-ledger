@@ -12,7 +12,7 @@ const Wrapper = styled.article`
   }
 `;
 
-const Label = styled.span`
+const Memo = styled.span`
   font-size: 1.3rem;
 `;
 
@@ -21,7 +21,7 @@ const Tag = styled.span`
   color: #007acc;
 `;
 
-const Money = styled.span`
+const Amount = styled.span`
   font-size: 1.4rem;
   color: red;
   flex: 1;
@@ -29,11 +29,11 @@ const Money = styled.span`
   margin-top: 7px;
 `;
 
-const Detail = ({tag, label, money}) => (
+const Detail = ({tag, memo, amount}) => (
   <Wrapper>
     <Tag>{tag}</Tag>
-    <Label>{label}</Label>
-    <Money>- {money} ￦</Money>
+    <Memo>{memo}</Memo>
+    <Amount>{amount} ￦</Amount>
   </Wrapper>
 );
 

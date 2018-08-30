@@ -23,9 +23,15 @@ const initialState = Map({
 });
 
 export default handleActions({
-  [CHANGE_INPUT]: (state, action) => state.setIn(['input', 'amount'], action.payload),
-  [INSERT]: (state, { payload: input }) => {
-    const item = Map({ id: id++, checked: false, input });
+  [CHANGE_INPUT]: (state, action) => {
+    const { name, value } = action.payload;
+    return state.setIn(['input', name], value);
+  },
+  [INSERT]: (state) => {
+    const tag = state.getIn(['input', 'tag'])
+    const memo = state.getIn(['input', 'memo'])
+    const amount = state.getIn(['input', 'amount'])
+    const item = Map({ id: id++, checked: false, tag: tag, memo: memo, amount: amount });
     return state.update('details', details => details.push(item));
   },
   [TOGGLE]: (state, { payload: id }) => {

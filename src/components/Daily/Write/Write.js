@@ -25,6 +25,7 @@ const AccountInput = ({ amount, onChange, onInsert }) => (
     <Article>
       <Input 
         type="number"
+        name="amount"
         value={amount}
         onChange={onChange}
         placeholder="금액 입력"

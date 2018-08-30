@@ -13,29 +13,28 @@ const Wrapper = styled.article`
   min-height: 400px;
 `;
 
-const AccountList = () => (
-  <Wrapper>
-    <Details
-      tag="공과금"
-      label="일이삼사오육칠팔구십일이삼사오육칠팔구십"
-      money="32,132"
-    />
-    <Details
-      tag="월급"
-      label="일이삼사오육칠팔"
-      money="32,132"
-    />
-    <Details
-      tag="식비"
-      label="일이삼사오육칠팔"
-      money="32,132"
-    />
-    <Details
-      tag="ㅇㅅㅇ"
-      label="일이삼사오육칠팔"
-      money="32,132"
-    />
-  </Wrapper>
-);
+const Breakdown = ({ details }) => {
 
-export default AccountList;
+  const item = details.map(
+    ledger => {
+      const { id, tag, memo, amount } = ledger.toJS();
+      console.log(ledger.toJS());
+      return(
+        <Details
+          id={id}
+          key={id}
+          tag={tag}
+          memo={memo}
+          amount={amount}
+        />
+      );
+    }
+  );
+  return(
+    <Wrapper>
+      {item}
+    </Wrapper>
+  )
+};
+
+export default Breakdown;
