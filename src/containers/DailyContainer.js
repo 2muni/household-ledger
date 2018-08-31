@@ -59,6 +59,8 @@ class DailyContainer extends React.Component {
           />
           <Write
             amount={amount}
+            tag={tag}
+            memo={memo}
             onChange={handleChange}
             onInsert={handleInsert}
           />
