@@ -23,7 +23,7 @@ const Tag = styled.span`
 
 const Amount = styled.span`
   font-size: 1.4rem;
-  color: red;
+  color: ${(props)=>props.AmountColor};
   flex: 1;
   text-align: right;
   margin-top: 7px;
@@ -33,7 +33,9 @@ const Detail = ({tag, memo, amount}) => (
   <Wrapper>
     <Tag>{tag}</Tag>
     <Memo>{memo}</Memo>
-    <Amount>{amount} ￦</Amount>
+    <Amount AmountColor = {amount < 0 ? 'red' : 'blue'}>
+      {amount} ￦
+    </Amount>
   </Wrapper>
 );
 
