@@ -20,9 +20,16 @@ const Article = styled.article`
   flex: column;
 `;
 
-const AccountInput = ({ amount, onChange, onInsert }) => (
+const AccountInput = ({ tag, memo, amount, onChange, onInsert }) => (
   <Wrapper>
-    <Article>
+    <Article>    
+    <Input 
+        type="text"
+        name="memo"
+        value={memo}
+        onChange={onChange}
+        placeholder="메모 입력"
+      />
       <Input 
         type="number"
         name="amount"
