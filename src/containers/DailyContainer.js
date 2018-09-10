@@ -46,7 +46,12 @@ class DailyContainer extends React.Component {
 
   render() {
     
-    const { handleChange, handleInsert, handleToggle, handleRemove } = this;
+    const {
+      handleChange,
+      handleInsert,
+      handleToggle,
+      handleRemove,
+    } = this;
     const { amount, tag, memo } = this.props.input.toJS();
     const { details } = this.props;
 
@@ -62,7 +67,7 @@ class DailyContainer extends React.Component {
             tag={tag}
             memo={memo}
             onChange={handleChange}
-            onInsert={handleInsert}
+            onInsert={handleInsert}            
           />
         </Section>
       </Wrapper>

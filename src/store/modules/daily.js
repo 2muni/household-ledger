@@ -19,7 +19,7 @@ const initialState = Map({
     memo: '',
     amount: ''
   }),
-  details: List()
+  details: List(),
 });
 
 export default handleActions({

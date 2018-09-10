@@ -2,10 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  display: flex;
-  padding: .5rem 0;
   font-weight: bold;
   font-size: 1.5rem;
+  margin-top: 5px;
+  margin-left: 10px;
 `;
 
 const Unit = ({ currency }) => (

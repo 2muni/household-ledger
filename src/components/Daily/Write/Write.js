@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Button from './Button';
 import Input from './Input';
-import Unit from './Unit';
 import Submit from './Submit';
 import TagItem from './TagItem';
 import TagWrapper from './TagWrapper';
@@ -15,39 +14,51 @@ const Wrapper = styled.section`
   flex-direction: column;
 `;
 
-const Article = styled.article`
+const ButtonWrapper = styled.article`
   display: flex;
-  flex: column;
+  height: 50px;
+`;
+
+const InputWrapper = styled.article`
+  display: flex;
+  height: 180px;
+  flex-direction: column; 
+`
+
+const HiddenWrapper = styled.article`
+  flex: 1;
+  height: 100%;
 `;
 
 const AccountInput = ({ tag, memo, amount, onChange, onInsert }) => (
   <Wrapper>
-    <Article>    
-    <Input 
+    <InputWrapper>
+      <Input
+        title="Memo"
         type="text"
         name="memo"
         value={memo}
         onChange={onChange}
         placeholder="메모 입력"
       />
-      <Input 
+      <Input
+        title="Amount"
         type="number"
         name="amount"
         value={amount}
         onChange={onChange}
         placeholder="금액 입력"
       />
-      <Unit currency="￦" />
-    </Article>
-    <Article>
+    </InputWrapper>
+    <ButtonWrapper>
       <Button label="태그" />
       <Button label="메모" />
       <Submit
         label="작성"
         onClick={onInsert}
       />
-    </Article>
-    <Article>
+    </ButtonWrapper>
+    <HiddenWrapper>
     <TagWrapper>
       <TagItem />
       <TagItem />
@@ -57,7 +68,7 @@ const AccountInput = ({ tag, memo, amount, onChange, onInsert }) => (
       <TagItem />
       <TagItem />
     </TagWrapper>
-    </Article>
+    </HiddenWrapper>
   </Wrapper>
 );
 
