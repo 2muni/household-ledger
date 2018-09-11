@@ -14,20 +14,15 @@ const Wrapper = styled.section`
   flex-direction: column;
 `;
 
-const ButtonWrapper = styled.article`
-  display: flex;
-  height: 50px;
-`;
-
 const InputWrapper = styled.article`
   display: flex;
-  height: 180px;
   flex-direction: column; 
 `
 
-const HiddenWrapper = styled.article`
-  flex: 1;
-  height: 100%;
+const ButtonWrapper = styled.article`
+  display: flex;
+  margin-top: 15px;
+  height: 50px;
 `;
 
 const AccountInput = ({ tag, memo, amount, onChange, onInsert }) => (
@@ -49,26 +44,19 @@ const AccountInput = ({ tag, memo, amount, onChange, onInsert }) => (
         onChange={onChange}
         placeholder="금액 입력"
       />
+      <TagWrapper>
+        <TagItem />
+        <TagItem />
+        <TagItem />
+        <TagItem />
+        <TagItem />
+        <TagItem />
+        <TagItem />
+      </TagWrapper>
     </InputWrapper>
     <ButtonWrapper>
-      <Button label="태그" />
-      <Button label="메모" />
-      <Submit
-        label="작성"
-        onClick={onInsert}
-      />
+      <Submit label="작성" onClick={onInsert} />
     </ButtonWrapper>
-    <HiddenWrapper>
-    <TagWrapper>
-      <TagItem />
-      <TagItem />
-      <TagItem />
-      <TagItem />
-      <TagItem />
-      <TagItem />
-      <TagItem />
-    </TagWrapper>
-    </HiddenWrapper>
   </Wrapper>
 );
 

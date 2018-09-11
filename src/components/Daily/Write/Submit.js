@@ -3,9 +3,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   flex: 1;
-  height: 20px;
+  height: 25px;
   margin: 5px;
-  margin-left: 25px;
   padding: .5rem;
   color: #fff;
   border-radius: 3px;

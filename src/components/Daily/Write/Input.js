@@ -2,18 +2,17 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.fieldset`
-  margin: 5px;
-  border: 1px solid #e6e6e6;
-  border-radius: 3px;
-  display: flex;
+  border: none;
 `
 
 const Input = styled.input`
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
   font-size: 1.3rem;
   text-align: right;
   height: 20px;
   padding: .5rem;
-  width: 100%;
+  width: 376px;
 
   &[type='number'] {
     -moz-appearance:textfield;
