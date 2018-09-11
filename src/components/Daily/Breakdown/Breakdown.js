@@ -18,7 +18,6 @@ const Breakdown = ({ details }) => {
   const item = details.map(
     ledger => {
       const { id, tag, memo, amount } = ledger.toJS();
-      console.log(ledger.toJS());
       return(
         <Details
           id={id}

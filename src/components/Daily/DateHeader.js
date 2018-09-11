@@ -17,10 +17,10 @@ const Label = styled.div`
   font-size: 1.5rem;
 `;
 
-const DateHeader = () => (
+const DateHeader = ({ allAmount }) => (
   <Wrapper>
     <Label>
-      2018-08-20 일자 사용한 금액은 20000 원입니다.
+      2018-08-20 일자 사용한 금액은 {allAmount} 원입니다.
     </Label>
   </Wrapper>
 );

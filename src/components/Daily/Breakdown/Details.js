@@ -33,7 +33,7 @@ const Detail = ({tag, memo, amount}) => (
   <Wrapper>
     <Tag>{tag}</Tag>
     <Memo>{memo}</Memo>
-    <Amount AmountColor = {amount < 0 ? 'red' : 'blue'}>
+    <Amount AmountColor = {amount < 0 ? 'red' : 'green'}>
       {amount} ￦
     </Amount>
   </Wrapper>
