@@ -20,7 +20,7 @@ const Label = styled.div`
 const DateHeader = ({ allAmount }) => (
   <Wrapper>
     <Label>
-      2018-08-20 일자 사용한 금액은 {allAmount} 원입니다.
+      {new Date().toLocaleDateString()} 일자 사용한 금액은 {allAmount} 원입니다.
     </Label>
   </Wrapper>
 );
