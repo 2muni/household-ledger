@@ -18,7 +18,7 @@ const InputWrapper = styled.article`
   display: flex;
   flex-direction: column; 
   margin: 15px 0px;
-`
+`;
 
 const ButtonWrapper = styled.article`
   display: flex;

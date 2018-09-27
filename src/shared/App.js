@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <React.Fragment>
-          <Header />
+          <Route path="/" component={Header} />
           <Route exact path="/" component={Daily}/>
           <Route path="/daily" component={Daily}/>
         </React.Fragment>
